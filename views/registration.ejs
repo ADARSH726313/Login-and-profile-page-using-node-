@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+
+    .background-container {
+      background-color: #f5f5f5;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .registration-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px; /* Increased width */
+      width: 90%;
+      text-align: left;
+    }
+
+    .registration-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #666;
+      font-weight: bold;
+    }
+
+    .input-group input,
+    .input-group textarea {
+      width: 100%; /* Updated width to take full container width */
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      height: 40px !important;
+      box-sizing: border-box; /* Include padding and border in width calculation */
+    }
+
+    .input-group textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus {
+      outline: none;
+      border-color: dodgerblue;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 4px;
+      border: none;
+      background-color: dodgerblue;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .register-btn:hover {
+      background-color: #007bff;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .signup-btn {
+  width: 100%;
+  padding: 4px;
+  border-radius: 4px;
+  border: none;
+  background-color: dodgerblue;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.signup-btn:hover {
+  background-color: #007bff;
+}
+  </style>
+</head>
+<body>
+
+  <div class="background-container">
+    <div class="registration-container " style="height: 107%;">
+      <h2>Registration Form</h2>
+
+      <% if(locals.mess){ %>
+       <%= mess %>
+        
+     <% } %>  
+      <form action="/registration" method="POST">
+        <div class="input-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="input-group">
+          <label for="profession">Profession:</label>
+          <input type="text" id="profession" name="profession" placeholder="Your profession" required>
+        </div>
+        <div class="input-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Your email" required>
+        </div>
+        <div class="input-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Your password" required>
+        </div>
+        <div class="input-group">
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" placeholder="Your city" required>
+        </div>
+        <div class="input-group">
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country" placeholder="Your country" required>
+        </div>
+        <div class="input-group">
+          <label for="about">About You:</label>
+          <textarea id="about" name="about" placeholder="Tell us about yourself"></textarea>
+        </div>
+        <!-- <button type="submit" class="register-btn"  onclick="location.href='/'">Register</button> -->
+        <input type="submit" value="Register">
+        <button class="signup-btn" onclick="location.href='/'">Login</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
